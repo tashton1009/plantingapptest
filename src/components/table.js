@@ -14,10 +14,10 @@ const PlantTable = props => (
       props.plants.map(plant => (
       <tr key={plant.id}>
         <td>{plant.name}</td>
-        <td>{plant.plantdata}</td>
+        <td>{plant.sunlight}</td>
         <td>
-          <button className="button muted-button">Edit</button>
-          <button className="button muted-button">Delete</button>
+          <button onClick={() => {props.editRow(plant)}} className="button muted-button">Edit</button>
+          <button onClick={() => props.deletePlant(plant.id)} className="button muted-button">Delete</button>
         </td>
       </tr>
     ))
